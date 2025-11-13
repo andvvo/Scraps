@@ -1,1 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Instrument Sans", sans-serif;
+  --color-beige: #f6e9d8;
+}
+
+@layer base {
+  body {
+    @apply font-sans;
+    @apply bg-beige;
+  }
+}

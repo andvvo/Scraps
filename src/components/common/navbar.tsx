@@ -1,17 +1,32 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
     <>
-      <ul>
+      <ul className="flex justify-center gap-12">
         <li>
-          <Link to="/">Create</Link>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "font-semibold" : "")}
+          >
+            Create
+          </NavLink>
         </li>
         <li>
-          <Link to="/saved-recipes">Saved Recipes</Link>
+          <NavLink
+            to="/saved-recipes"
+            className={({ isActive }) => (isActive ? "font-semibold" : "")}
+          >
+            Saved Recipes
+          </NavLink>
         </li>
         <li>
-          <Link to="/tips">Tips</Link>
+          <NavLink
+            to="/tips"
+            className={({ isActive }) => (isActive ? "font-semibold" : "")}
+          >
+            Tips
+          </NavLink>
         </li>
       </ul>
     </>
