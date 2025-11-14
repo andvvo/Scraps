@@ -4,6 +4,7 @@
 @theme {
   --font-sans: "Instrument Sans", sans-serif;
   --color-beige: #f6e9d8;
+  --color-orange: #ff7e52;
 }
 
 @layer base {

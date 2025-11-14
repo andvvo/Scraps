@@ -5,11 +5,11 @@ import RecipeList from "../components/create-results/recipe/recipe-list";
 import RecipeGrid from "../components/create-results/recipe/recipe-grid";
 import IngredientList from "../components/create-results/ingredient/ingredient-list";
 
-export default function CreateResults() {
+export default function CookResults() {
   const [viewMode, setViewMode] = useState<"list" | "grid">("list");
   const [searchParams] = useSearchParams();
 
-  const ingredients = [];
+  const ingredients = searchParams.getAll("foods");
   const recipes = useMemo(() => [], []);
 
   return (

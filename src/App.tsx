@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/layout";
-import Create from "./pages/create";
-import CreateResults from "./pages/create-results";
+import Cook from "./pages/cook";
+import CookResults from "./pages/cook-results";
 import SavedRecipes from "./pages/saved-recipes";
 import Tips from "./pages/tips";
 
@@ -10,8 +10,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Create />}></Route>
-          <Route path="/create-results" element={<CreateResults />}></Route>
+          <Route index element={<Cook />}></Route>
+          <Route path="/cook-results" element={<CookResults />}></Route>
           <Route path="/saved-recipes" element={<SavedRecipes />}></Route>
           <Route path="/tips" element={<Tips />}></Route>
         </Route>
