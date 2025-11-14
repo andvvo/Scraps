@@ -1,18 +1,22 @@
 import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { BsList, BsGrid, BsListUl, BsGridFill } from "react-icons/bs";
-import RecipeList from "../components/recipes/recipe-list";
-import RecipeGrid from "../components/recipes/recipe-grid";
+import RecipeList from "../components/create-results/recipe/recipe-list";
+import RecipeGrid from "../components/create-results/recipe/recipe-grid";
+import IngredientList from "../components/create-results/ingredient/ingredient-list";
 
 export default function CreateResults() {
   const [viewMode, setViewMode] = useState<"list" | "grid">("list");
   const [searchParams] = useSearchParams();
 
+  const ingredients = [];
   const recipes = useMemo(() => [], []);
 
   return (
     <div>
-      <h1>Your Ingredients:</h1>
+      <h2>Your Ingredients:</h2>
+
+      <IngredientList ingredients={ingredients} />
 
       <div className="flex justify-between">
         <h1>Recipes</h1>
