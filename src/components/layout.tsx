@@ -9,8 +9,13 @@ export default function Layout() {
   return (
     <div className="flex flex-col h-screen">
       <header className="pt-8">
-        {isChildPage && <Link to="/">← Back to Create</Link>}
-        <Navbar />
+        <div className="flex items-center">
+          <div className="flex-1 ml-10">
+            {isChildPage && <Link to="/">← Back to Create</Link>}
+          </div>
+          <Navbar />
+          <div className="flex-1"></div>
+        </div>
       </header>
       <main className="flex-1 overflow-auto">
         <Outlet />
