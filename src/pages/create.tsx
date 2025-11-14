@@ -1,7 +1,7 @@
-import fridge from "../assets/fridge.svg";
-import pantry from "../assets/pantry.svg";
-import logo from "../assets/logo.svg";
-import table from "../assets/table.svg";
+import fridge from "../assets/homepage/fridge.svg";
+import pantry from "../assets/homepage/pantry.svg";
+import logo from "../assets/homepage/logo.svg";
+import table from "../assets/homepage/table.svg";
 
 export default function Create() {
   return (
