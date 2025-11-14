@@ -7,15 +7,15 @@ export default function Layout() {
   const isChildPage = location.pathname !== "/";
 
   return (
-    <div className="">
-      <header className="p-6">
+    <div className="flex flex-col h-screen">
+      <header className="pt-8">
         {isChildPage && <Link to="/">← Back to Create</Link>}
         <Navbar />
       </header>
-      <main className="flex-1">
+      <main className="flex-1 overflow-auto">
         <Outlet />
       </main>
-      <footer className="p-6"></footer>
+      <footer className="p-4"></footer>
     </div>
   );
 }
