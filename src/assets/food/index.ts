@@ -20,3 +20,7 @@ export { default as riceDark } from "./rice-dark.svg";
 export { default as riceLight } from "./rice-light.svg";
 export { default as tomatoDark } from "./tomato-dark.svg";
 export { default as tomatoLight } from "./tomato-light.svg";
+export { default as beansDark } from "./beans-dark.svg";
+export { default as beansLight } from "./beans-light.svg";
+export { default as ramenDark } from "./ramen-dark.svg";
+export { default as ramenLight } from "./ramen-light.svg";

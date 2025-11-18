@@ -114,30 +114,50 @@ export default function Cook() {
         </div>
       </div>
       <div className="flex-1 flex-shrink-0 flex flex-col justify-around items-start h-full w-full relative">
-        <img
-          src={pantry}
-          alt="Pantry"
-          className="w-full max-w-[70%] object-contain -ml-4"
-        />
+        <div className="relative w-full max-w-[75%] aspect-[2.147/1]">
+          <img
+            src={pantry}
+            alt="Pantry"
+            className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+          />
 
-        {/* <FoodIcon
-          defaultSrc={foodIcons.riceDark}
-          hoverSrc={foodIcons.riceLight}
-          selectedSrc={foodIcons.riceLight}
-          selected={isSelected("rice")}
-          onToggle={() => toggleFood("rice")}
-          alt="Rice"
-          className="absolute top-0 left-0 translate-x-6 translate-y-29 w-24 h-auto"
-        />
-        <FoodIcon
-          defaultSrc={foodIcons.pastaDark}
-          hoverSrc={foodIcons.pastaLight}
-          selectedSrc={foodIcons.pastaLight}
-          selected={isSelected("pasta")}
-          onToggle={() => toggleFood("pasta")}
-          alt="Pasta"
-          className="absolute top-0 left-0 translate-x-34 translate-y-29 w-24 h-auto"
-        /> */}
+          <FoodIcon
+            defaultSrc={foodIcons.riceDark}
+            hoverSrc={foodIcons.riceLight}
+            selectedSrc={foodIcons.riceLight}
+            selected={isSelected("rice")}
+            onToggle={() => toggleFood("rice")}
+            alt="Rice"
+            className="absolute left-[22%] top-[54%] w-[18%] -translate-x-1/2 -translate-y-1/2 z-10"
+          />
+          <FoodIcon
+            defaultSrc={foodIcons.pastaDark}
+            hoverSrc={foodIcons.pastaLight}
+            selectedSrc={foodIcons.pastaLight}
+            selected={isSelected("pasta")}
+            onToggle={() => toggleFood("pasta")}
+            alt="Pasta"
+            className="absolute left-[41%] top-[54%] w-[18%] -translate-x-1/2 -translate-y-1/2 z-10"
+          />
+          <FoodIcon
+            defaultSrc={foodIcons.beansDark}
+            hoverSrc={foodIcons.beansLight}
+            selectedSrc={foodIcons.beansLight}
+            selected={isSelected("beans")}
+            onToggle={() => toggleFood("beans")}
+            alt="Beans"
+            className="absolute left-[58%] top-[54%] w-[18%] -translate-x-1/2 -translate-y-1/2 z-10"
+          />
+          <FoodIcon
+            defaultSrc={foodIcons.ramenDark}
+            hoverSrc={foodIcons.ramenLight}
+            selectedSrc={foodIcons.ramenLight}
+            selected={isSelected("ramen")}
+            onToggle={() => toggleFood("ramen")}
+            alt="Ramen"
+            className="absolute left-[75%] top-[54%] w-[18%] -translate-x-1/2 -translate-y-1/2 z-10"
+          />
+        </div>
 
         <div className="flex flex-col mb-4 w-full">
           <img src={logo} alt="Logo" className="w-full max-w-[45%] -ml-2" />
@@ -147,21 +167,23 @@ export default function Cook() {
           </p>
         </div>
 
-        <img
-          src={table}
-          alt="Table"
-          className="w-full max-w-[75%] object-contain"
-        />
+        <div className="relative w-full max-w-[75%] aspect-[2.79/1]">
+          <img
+            src={table}
+            alt="Table"
+            className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+          />
 
-        {/* <Link
-          to={{
-            pathname: "/cook-results",
-            search: createSearchParams({ foods: selectedFoods }).toString(),
-          }}
-          className="text-white text-lg font-bold px-8 py-2 border-2 border-white rounded-lg hover:text-orange hover:bg-white absolute bottom-0 right-0 -translate-x-21 -translate-y-24 cursor-pointer"
-        >
-          Let's Cook!
-        </Link> */}
+          <Link
+            to={{
+              pathname: "/cook-results",
+              search: createSearchParams({ foods: selectedFoods }).toString(),
+            }}
+            className="text-white text-lg font-bold px-8 py-2 border-2 border-white rounded-lg hover:text-orange hover:bg-white absolute left-[75%] top-[62%] w-[33%] -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer"
+          >
+            Let's Cook!
+          </Link>
+        </div>
       </div>
     </div>
   );
