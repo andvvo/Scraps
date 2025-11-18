@@ -20,14 +20,6 @@ export default function Navbar() {
             Saved Recipes
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/tips"
-            className={({ isActive }) => (isActive ? "font-semibold" : "")}
-          >
-            Tips
-          </NavLink>
-        </li>
       </ul>
     </>
   );
