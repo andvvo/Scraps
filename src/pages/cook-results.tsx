@@ -13,14 +13,15 @@ export default function CookResults() {
   const recipes = useMemo(() => [], []);
 
   return (
-    <div>
-      <h2>Your Ingredients:</h2>
-
-      <IngredientList ingredients={ingredients} />
+    <div className="flex flex-col justify-start w-full max-w-[75%]">
+      <div className="my-16">
+        <h1 className="text-2xl mb-6">Your Ingredients:</h1>
+        <IngredientList ingredients={ingredients} />
+      </div>
 
       <div className="flex justify-between">
-        <h1>Recipes</h1>
-        <ul>
+        <h1 className="text-3xl font-bold">Recipes</h1>
+        <ul className="flex items-center gap-4">
           <li>
             <button onClick={() => setViewMode("list")}>
               {viewMode === "list" ? (
@@ -29,11 +30,13 @@ export default function CookResults() {
                 <BsList size={24} />
               )}
             </button>
+          </li>
+          <li>
             <button onClick={() => setViewMode("grid")}>
               {viewMode === "grid" ? (
-                <BsGridFill size={24} />
+                <BsGridFill size={28} />
               ) : (
-                <BsGrid size={24} />
+                <BsGrid size={28} />
               )}
             </button>
           </li>

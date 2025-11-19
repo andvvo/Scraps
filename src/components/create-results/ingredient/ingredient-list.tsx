@@ -1,7 +1,17 @@
-export default function IngredientList({ ingredients }) {
+import Ingredient from "./ingredient";
+
+export default function IngredientList({
+  ingredients,
+}: {
+  ingredients: string[];
+}) {
   return (
-    <>
-      <h1>Ingredient1, ..., IngredientN</h1>
-    </>
+    <div className="flex items-center overflow-auto">
+      {ingredients.map((ingredient) => (
+        <div className="flex-shrink-0">
+          <Ingredient key={ingredient} ingredient={ingredient} />
+        </div>
+      ))}
+    </div>
   );
 }

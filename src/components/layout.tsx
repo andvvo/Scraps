@@ -21,7 +21,7 @@ export default function Layout() {
           <div className="flex-1"></div>
         </div>
       </header>
-      <main className="h-full overflow-auto">
+      <main className="flex flex-col items-center h-full overflow-auto">
         <Outlet />
       </main>
       <footer className="m-4"></footer>
