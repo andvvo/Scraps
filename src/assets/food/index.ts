@@ -1,26 +1,105 @@
-export { default as breadDark } from "./bread-dark.svg";
-export { default as breadLight } from "./bread-light.svg";
-export { default as cheeseDark } from "./cheese-dark.svg";
-export { default as cheeseLight } from "./cheese-light.svg";
-export { default as chickenDark } from "./chicken-dark.svg";
-export { default as chickenLight } from "./chicken-light.svg";
-export { default as eggDark } from "./egg-dark.svg";
-export { default as eggLight } from "./egg-light.svg";
-export { default as garlicDark } from "./garlic-dark.svg";
-export { default as garlicLight } from "./garlic-light.svg";
-export { default as lettuceDark } from "./lettuce-dark.svg";
-export { default as lettuceLight } from "./lettuce-light.svg";
-export { default as milkDark } from "./milk-dark.svg";
-export { default as milkLight } from "./milk-light.svg";
-export { default as onionDark } from "./onion-dark.svg";
-export { default as onionLight } from "./onion-light.svg";
-export { default as pastaDark } from "./pasta-dark.svg";
-export { default as pastaLight } from "./pasta-light.svg";
-export { default as riceDark } from "./rice-dark.svg";
-export { default as riceLight } from "./rice-light.svg";
-export { default as tomatoDark } from "./tomato-dark.svg";
-export { default as tomatoLight } from "./tomato-light.svg";
-export { default as beansDark } from "./beans-dark.svg";
-export { default as beansLight } from "./beans-light.svg";
-export { default as ramenDark } from "./ramen-dark.svg";
-export { default as ramenLight } from "./ramen-light.svg";
+import breadDark from "./bread-dark.svg";
+import breadLight from "./bread-light.svg";
+import cheeseDark from "./cheese-dark.svg";
+import cheeseLight from "./cheese-light.svg";
+import chickenDark from "./chicken-dark.svg";
+import chickenLight from "./chicken-light.svg";
+import eggDark from "./egg-dark.svg";
+import eggLight from "./egg-light.svg";
+import garlicDark from "./garlic-dark.svg";
+import garlicLight from "./garlic-light.svg";
+import lettuceDark from "./lettuce-dark.svg";
+import lettuceLight from "./lettuce-light.svg";
+import milkDark from "./milk-dark.svg";
+import milkLight from "./milk-light.svg";
+import onionDark from "./onion-dark.svg";
+import onionLight from "./onion-light.svg";
+import pastaDark from "./pasta-dark.svg";
+import pastaLight from "./pasta-light.svg";
+import riceDark from "./rice-dark.svg";
+import riceLight from "./rice-light.svg";
+import tomatoDark from "./tomato-dark.svg";
+import tomatoLight from "./tomato-light.svg";
+import beansDark from "./beans-dark.svg";
+import beansLight from "./beans-light.svg";
+import ramenDark from "./ramen-dark.svg";
+import ramenLight from "./ramen-light.svg";
+
+export const FOOD_KEYS = [
+  "beans",
+  "bread",
+  "cheese",
+  "chicken",
+  "egg",
+  "garlic",
+  "lettuce",
+  "milk",
+  "onion",
+  "pasta",
+  "ramen",
+  "rice",
+  "tomato",
+] as const;
+
+export type FoodKey = (typeof FOOD_KEYS)[number];
+
+export const ICON_MAP_DARK: Record<FoodKey, string> = {
+  beans: beansDark,
+  bread: breadDark,
+  cheese: cheeseDark,
+  chicken: chickenDark,
+  egg: eggDark,
+  garlic: garlicDark,
+  lettuce: lettuceDark,
+  milk: milkDark,
+  onion: onionDark,
+  pasta: pastaDark,
+  ramen: ramenDark,
+  rice: riceDark,
+  tomato: tomatoDark,
+};
+
+export const ICON_MAP_LIGHT: Record<FoodKey, string> = {
+  beans: beansLight,
+  bread: breadLight,
+  cheese: cheeseLight,
+  chicken: chickenLight,
+  egg: eggLight,
+  garlic: garlicLight,
+  lettuce: lettuceLight,
+  milk: milkLight,
+  onion: onionLight,
+  pasta: pastaLight,
+  ramen: ramenLight,
+  rice: riceLight,
+  tomato: tomatoLight,
+};
+
+export {
+  breadDark,
+  breadLight,
+  cheeseDark,
+  cheeseLight,
+  chickenDark,
+  chickenLight,
+  eggDark,
+  eggLight,
+  garlicDark,
+  garlicLight,
+  lettuceDark,
+  lettuceLight,
+  milkDark,
+  milkLight,
+  onionDark,
+  onionLight,
+  pastaDark,
+  pastaLight,
+  riceDark,
+  riceLight,
+  tomatoDark,
+  tomatoLight,
+  beansDark,
+  beansLight,
+  ramenDark,
+  ramenLight,
+};
