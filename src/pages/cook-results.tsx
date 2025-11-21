@@ -1,22 +1,30 @@
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getRecipes } from "../services/recipes";
 import { BsList, BsGrid, BsListUl, BsGridFill } from "react-icons/bs";
 import RecipeList from "../components/create-results/recipe/recipe-list";
 import RecipeGrid from "../components/create-results/recipe/recipe-grid";
 import IngredientList from "../components/create-results/ingredient/ingredient-list";
-import exampleRecipe from "../assets/example-recipe.json";
 
 export default function CookResults() {
   const [viewMode, setViewMode] = useState<"list" | "grid">("list");
+  const [recipes, setRecipes] = useState([]);
   const [searchParams] = useSearchParams();
-
   const ingredients = searchParams.getAll("foods");
-  // const recipes = useMemo(
-  //   () => getRecipes(ingredients),
-  //   [ingredients.join(",")]
-  // );
-  const recipes = exampleRecipe;
+
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      try {
+        const data = await getRecipes(ingredients);
+        setRecipes(data);
+      } catch (error) {
+        console.error("Error fetching recipes", error);
+        throw error;
+      }
+    };
+
+    fetchRecipes();
+  }, []);
 
   return (
     <div className="flex flex-col justify-start w-full max-w-[75%]">

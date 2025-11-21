@@ -48,12 +48,12 @@ app.get("/api/recipes", async (req: Request, res: Response) => {
       {
         params: {
           ingredients: ingredients.join(","),
-          number: 1,
+          number: 5,
           apiKey: process.env.SPOONACULAR_API_KEY,
         },
       }
     );
-    res.json(data);
+    res.status(200).json(data);
   } catch (error) {
     console.error("Error fetching recipes:", error);
     res.status(502).json({ error: "Upstream API failure" });
