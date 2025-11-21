@@ -1,9 +1,27 @@
-import { useState } from "react";
-import IngredientList from "../ingredient/ingredient-list";
+import { useState, useEffect } from "react";
 import { FaRegBookmark, FaBookmark } from "react-icons/fa";
+import IngredientList from "../ingredient/ingredient-list";
+import {
+  getBookmark,
+  postBookmark,
+  deleteBookmark,
+} from "../../../services/recipes";
 
 export default function RecipeListCard({ recipe }) {
   const [bookmarked, setBookmarked] = useState(false);
+
+  useEffect(() => {
+    const checkBookmark = async () => {
+      try {
+        const data = await getBookmark({ id: recipe.id });
+        setBookmarked(data.length !== 0);
+      } catch (error) {
+        console.error("Failed to set bookmarks", error);
+        throw error;
+      }
+    };
+    checkBookmark();
+  }, []);
 
   const ingredientsUsed: string[] = [];
   const images: string[] = [];
@@ -23,8 +41,16 @@ export default function RecipeListCard({ recipe }) {
         <div className="flex gap-2 pt-4">
           <h2>{recipe.title}</h2>
           <button
-            onClick={() => setBookmarked(bookmarked ? false : true)}
             className="cursor-pointer"
+            onClick={() => {
+              if (bookmarked) {
+                setBookmarked(false);
+                deleteBookmark({ id: recipe.id });
+              } else {
+                setBookmarked(true);
+                postBookmark(recipe);
+              }
+            }}
           >
             {bookmarked ? <FaBookmark /> : <FaRegBookmark />}
           </button>
